@@ -5,4 +5,6 @@ class Tags:
     section = 'section'
     span = 'span'
 
-SupportedPages = ['Data Science']
+Supported_Platforms_and_Pages = {
+    "Coursera" : ["DataScience"]
+}

@@ -1,9 +1,8 @@
 from bs4 import BeautifulSoup
 import json
 from utils import Tags, SupportedPages
+from selenium_bot import BotParser
 
-# TODO - Look into Scrapy for bot avoidance
-# https://pythonprogramming.net/urllib-tutorial-python-3/
 class HtmlParser:
 
     def __init__(self, response, page_number=1, section='Data Science'):
@@ -59,13 +58,13 @@ class HtmlParser:
         self._fetch_tag_and_id(tag=Tags.section, _class='rc-DomainPage')
         self._fetch_tag_and_id(tag=Tags.div, _class='product-offerings-wrapper')
         self._fetch_tag_and_id(tag=Tags.section, _class='rc-ProductOfferings')
-        self._fetch_tag_and_id(tag=Tags.div, _class=['offerings-wrapper', 'bt3-container', 'body-container'])
-        self._fetch_tag_and_id(tag=Tags.div, _class='rc-ListGoogleSchemaMarkup')
-        self.soup = self.soup.script.contents[0].split('\n')[1].strip()
-        return json.loads(self.soup)
+#        self._fetch_tag_and_id(tag=Tags.div, _class=['offerings-wrapper', 'bt3-container', 'body-container'])
+#        self._fetch_tag_and_id(tag=Tags.div, _class='rc-ListGoogleSchemaMarkup')
+#        self.soup = self.soup.script.contents[0].split('\n')[1].strip()
+#        return json.loads(self.soup)
 
 
-if __name__ == "__main__":
-    from urllib.request import urlopen
-    web_url = urlopen('https://www.coursera.org/browse/data-science?page=2')
-    read = web_url.read()
+# if __name__ == "__main__":
+#     from urllib.request import urlopen
+#     web_url = urlopen('https://www.coursera.org/browse/data-science?page=2')
+#     read = web_url.read()
